@@ -10,6 +10,7 @@ import {
 import {images} from '../../assets/images/map';
 import Button from '../../component/Button/Button';
 import Input from '../../component/text-input/Input';
+import { colors } from '../../globals/colors';
 import {verticalScale} from '../../globals/scale';
 import CheckEmail from '../check-email/CheckEmail';
 import {styles} from './SetNewPasswordScreen.styles';
@@ -27,6 +28,8 @@ export default function SetNewPasswordScreen(props: any) {
       <Text style={styles.title}>Set new password</Text>
       <Input
         title="Password"
+        placeholder="Enter password"
+        placeholderTextColor={colors.lightBlack}
         passwordIcon={
           iconEye == true ? images.password_show : images.password_hide
         }

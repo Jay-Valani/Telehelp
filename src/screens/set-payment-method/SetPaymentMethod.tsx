@@ -6,7 +6,7 @@ import {styles} from './SetPaymentMethod.styles';
 import {colors} from '../../globals/colors';
 
 const SetPaymentMethod = (props: any) => {
-    const [checkedCircleShift, setCheckedCircleShift] = useState(0);
+  const [checkedCircleShift, setCheckedCircleShift] = useState(0);
   return (
     <View style={styles.container}>
       <View
@@ -16,7 +16,10 @@ const SetPaymentMethod = (props: any) => {
           justifyContent: 'space-between',
           marginTop: verticalScale(60),
         }}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            props.navigation.goBack();
+          }}>
           <Image
             source={images.back_arrow}
             resizeMode="contain"
@@ -29,9 +32,7 @@ const SetPaymentMethod = (props: any) => {
           style={styles.circle}
         />
       </View>
-      <Text style={styles.mainHeading}>
-      Set up payment method
-      </Text>
+      <Text style={styles.mainHeading}>Set up payment method</Text>
       <Text style={styles.heading}>
         How would you like
         {'\n'}to proceed?
@@ -41,8 +42,7 @@ const SetPaymentMethod = (props: any) => {
         <TouchableOpacity
           onPress={() => {
             setCheckedCircleShift(!checkedCircleShift);
-          }}
-        >
+          }}>
           <View style={styles.appointmentContainer}>
             {checkedCircleShift == false ? (
               <Image
@@ -53,14 +53,15 @@ const SetPaymentMethod = (props: any) => {
             ) : (
               <View style={styles.Circle} />
             )}
-            <Text style={styles.modifiedAppointment}>Use a credit card only</Text>
+            <Text style={styles.modifiedAppointment}>
+              Use a credit card only
+            </Text>
           </View>
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             setCheckedCircleShift(!checkedCircleShift);
-          }}
-        >
+          }}>
           <View style={styles.appointmentContainerCancle}>
             {checkedCircleShift == true ? (
               <Image
@@ -71,18 +72,25 @@ const SetPaymentMethod = (props: any) => {
             ) : (
               <View style={styles.Circle} />
             )}
-            <Text style={styles.cancleAppointment}>Use a different health insurance</Text>
+            <Text style={styles.cancleAppointment}>
+              Use a different health insurance
+            </Text>
           </View>
         </TouchableOpacity>
       </View>
       <View
         style={{
           flex: 1,
-          justifyContent: "flex-end",
+          justifyContent: 'flex-end',
           marginBottom: verticalScale(30),
-        }}
-      >
-        <TouchableOpacity onPress={() => {props.navigation.navigate("addInsurance")}}>
+        }}>
+        <TouchableOpacity
+          onPress={() => {
+            checkedCircleShift == 0 ? 
+            props.navigation.navigate('credit_payment')
+            : 
+            props.navigation.navigate('addInsurance')
+          }}>
           <View style={styles.btnContainer}>
             <Text style={styles.btnText}>Continue</Text>
           </View>

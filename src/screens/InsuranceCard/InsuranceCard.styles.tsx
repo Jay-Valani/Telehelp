@@ -93,12 +93,9 @@ export const styles = StyleSheet.create({
   },
   btnContainer: {
     borderWidth: 0.1,
-    borderColor: colors.appThemeColor,
-    backgroundColor: colors.appThemeColor,
     height: 56,
     marginHorizontal: scale(20),
     borderRadius: 30,
-    opacity: 0.6,
     marginTop: verticalScale(19),
   },
   btnText: {
@@ -108,4 +105,35 @@ export const styles = StyleSheet.create({
     textAlign: "center",
     marginVertical: verticalScale(16),
   },
+  modalTakePhoto: {
+    fontSize: global.font_20,
+    color: colors.appThemeColor,
+    textAlign: "center",
+    marginVertical: verticalScale(20)
+  },
+  modalChoosePhoto: {
+    fontSize: global.font_20,
+    color: colors.appThemeColor,
+    textAlign: "center",
+    marginVertical: verticalScale(20)
+  },
+  modalCanclePhoto: {
+    fontSize: global.font_20,
+    color: colors.appThemeColor,
+    textAlign: "center",
+    fontWeight: "600",
+    marginVertical: verticalScale(15)
+  },
+  change: {
+    fontSize: global.font_16,
+    color: colors.appThemeColor,
+    fontWeight: "500",
+    marginRight: scale(24)
+  },
+  remove: {
+    fontSize: global.font_16,
+    color: colors.red,
+    fontWeight: "500",
+    marginLeft: scale(24)
+  }
 });

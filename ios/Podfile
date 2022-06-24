@@ -19,6 +19,12 @@ target 'Telehelp' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  pod 'react-native-image-picker', :path => '../node_modules/react-native-image-picker'
+
+  pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
+
+
+
   target 'TelehelpTests' do
     inherit! :complete
     # Pods for testing

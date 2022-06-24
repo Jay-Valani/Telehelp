@@ -1,16 +1,16 @@
 import {Image, Text, View, TouchableOpacity, ScrollView} from 'react-native';
-import React, {useState,useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {styles} from './PersonalInfo.styles';
 import scale, {verticalScale} from '../../globals/scale';
 import {images} from '../../assets/images/map';
 import Input from '../../component/text-input/Input';
 import {colors} from '../../globals/colors';
 import DropDown from '../../component/drop-down/DropDown';
-import Modal from "react-native-modal";
+import Modal from 'react-native-modal';
 import InsuranceCard from '../InsuranceCard/InsuranceCard';
 
 const PersonalInfo = (props: any) => {
-  const [modalVisible, setModalVisible] = useState(false);
+  const {isPersonalInfoDone, onConfirm,profileModalVisible,setProfileModalVisible} = props;
   return (
     <View style={styles.container}>
       <View
@@ -22,7 +22,7 @@ const PersonalInfo = (props: any) => {
           justifyContent: 'space-between',
         }}>
         <Text style={styles.personalInfo}>Personal info</Text>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => {setProfileModalVisible(!profileModalVisible)}}>
           <Image
             source={images.cancle}
             resizeMode="contain"
@@ -93,7 +93,11 @@ const PersonalInfo = (props: any) => {
             marginBottom: verticalScale(15),
             marginTop: verticalScale(20),
           }}>
-          <TouchableOpacity onPress={() => {setModalVisible(!modalVisible)}}>
+          <TouchableOpacity
+            onPress={() => {
+              setProfileModalVisible(!profileModalVisible);
+              onConfirm()
+            }}>
             <View
               style={[
                 styles.btnContainer,
@@ -102,34 +106,12 @@ const PersonalInfo = (props: any) => {
                   backgroundColor: colors.appThemeColor,
                 },
               ]}>
-              <Text style={styles.btnText}>Confirm</Text>
+              <Text style={[styles.btnText,{marginVertical: verticalScale(20)}]}>Confirm</Text>
             </View>
           </TouchableOpacity>
         </View>
       </ScrollView>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        isVisible={modalVisible}
-        style={{margin: 0}}
-        hasBackdrop={true}
-        backdropOpacity={0.2}
-        // backdropColor="transparent"
-        onRequestClose={() => {
-          console.log('Modal has been closed.');
-          setModalVisible(!modalVisible);
-        }}>
-        <View
-          style={{
-            marginTop: verticalScale(70),
-            backgroundColor: 'transparent',
-            flex: 1,
-            borderTopLeftRadius: 30,
-            borderTopRightRadius: 30,
-          }}>
-            <InsuranceCard />
-        </View>
-      </Modal>
+     
     </View>
   );
 };

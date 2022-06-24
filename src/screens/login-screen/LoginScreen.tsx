@@ -10,6 +10,7 @@ import {
 import {images} from '../../assets/images/map';
 import Button from '../../component/Button/Button';
 import Input from '../../component/text-input/Input';
+import { colors } from '../../globals/colors';
 import {verticalScale} from '../../globals/scale';
 import { styles } from './LoginScreen.styles';
 
@@ -24,9 +25,11 @@ export default function LoginScreen(props: any) {
         <Image source={images.back_arrow} style={styles.backImage} />
       </TouchableOpacity>
       <Text style={styles.title}>Welcome back</Text>
-      <Input title="Email address" style={{marginTop: verticalScale(40)}} />
+      <Input title="Email address" placeholderTextColor={colors.lightBlack} style={{marginTop: verticalScale(40)}} placeholder="Email address" />
       <Input
         title="Password"
+        placeholder="Password"
+        placeholderTextColor={colors.lightBlack}
         passwordIcon={
           iconEye == true ? images.password_show : images.password_hide
         }

@@ -13,6 +13,12 @@ import SetPaymentMethod from '../screens/set-payment-method/SetPaymentMethod';
 import AddInsurance from '../screens/AddInsurance/AddInsurance';
 import PersonalInfo from '../screens/personal-info/PersonalInfo';
 import InsuranceCard from '../screens/InsuranceCard/InsuranceCard';
+import CreditPayment from '../screens/credit-card-payment/CreditPayment';
+import AddDocuments from '../screens/add-documents/AddDocuments';
+import SessionBooked from '../screens/sessions-book/SessionBooked';
+import SelectedFrequency from '../screens/select-session-frequency/SelectedFrequency';
+import Calender from '../screens/CalenderScreen/CalenderScreen';
+import ConfirmSelection from '../screens/confirm-selection/ConfirmSelection';
 
 const Stack = createNativeStackNavigator();
 
@@ -82,6 +88,36 @@ export const NavigationStack = () => {
       <Stack.Screen
         name="insuranceCard"
         component={InsuranceCard}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="credit_payment"
+        component={CreditPayment}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="add_documents"
+        component={AddDocuments}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="session_book"
+        component={SessionBooked}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="selected_frequency"
+        component={SelectedFrequency}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="calender"
+        component={Calender}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="confirm_selection"
+        component={ConfirmSelection}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -21,8 +21,6 @@ export const styles = StyleSheet.create({
   },
   btnContainer: {
     borderWidth: 0.1,
-    borderColor: colors.appThemeColor,
-    backgroundColor: colors.appThemeColor,
     height: 56,
     marginHorizontal: scale(20),
     borderRadius: 30,
@@ -31,12 +29,10 @@ export const styles = StyleSheet.create({
     fontSize: global.font_16,
     color: colors.white,
     textAlign: "center",
-    marginVertical: verticalScale(16),
+    marginVertical: verticalScale(20),
   },
   card: {
-    borderWidth: 0.2,
     borderRadius: 10,
-    borderColor: colors.gray,
     marginHorizontal: scale(23),
   },
   info: {
