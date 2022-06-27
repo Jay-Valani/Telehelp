@@ -81,7 +81,6 @@ export const styles = StyleSheet.create({
     borderRadius: 30,
   },
   btnText: {
-    //  : global.NEUTRIFPRO_REGULAR,
     fontSize: global.font_16,
     color: colors.white,
     textAlign: "center",

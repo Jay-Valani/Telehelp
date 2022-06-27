@@ -20,7 +20,6 @@ export const styles = StyleSheet.create({
     marginLeft: scale(20),
   },
   title: {
-    // fontFamily: global.RECOLETA_REGULAR,
     fontSize: global.font_32,
     marginTop: verticalScale(36),
     marginLeft: scale(20),

@@ -26,14 +26,12 @@ export const styles = StyleSheet.create({
     marginTop: verticalScale(10),
   },
   subHeading: {
-    //  : global.RECOLETA_REGULAR,
     fontSize: global.font_14,
     color: colors.lightBlack,
     marginTop: verticalScale(20),
     marginHorizontal: scale(20),
   },
   photo: {
-    //  : global.NEUTRIFPRO_REGULAR,
     fontSize: global.font_14,
     color: colors.lightBlack,
     marginTop: verticalScale(20),
@@ -58,14 +56,12 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
   },
   cardHeading: {
-    //  : global.NEUTRIFPRO_REGULAR,
     fontSize: global.font_9,
     color: colors.white,
     marginTop: verticalScale(9),
     marginHorizontal: scale(10),
   },
   uploadPhoto: {
-    //  : global.NEUTRIFPRO_REGULAR,
     fontSize: global.font_16,
     color: colors.appThemeColor,
     marginTop: verticalScale(20),
@@ -99,7 +95,6 @@ export const styles = StyleSheet.create({
     marginTop: verticalScale(19),
   },
   btnText: {
-    //  : global.NEUTRIFPRO_REGULAR,
     fontSize: global.font_16,
     color: colors.white,
     textAlign: "center",
