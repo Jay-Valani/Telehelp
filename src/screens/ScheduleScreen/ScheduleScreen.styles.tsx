@@ -8,22 +8,74 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
   },
-  heading: {
+  header: {
+    flex: 0.28,
+    backgroundColor: colors.appThemeColor,
+  },
+  headerTxt: {
     fontSize: global.font_32,
+    color: colors.white,
+    marginTop: verticalScale(70),
+    marginLeft: scale(20),
+  },
+  switchContainer: {
+    marginTop: verticalScale(20),
+    flexDirection: 'row',
+    alignSelf: 'center',
+  },
+  weekContainer: {
+    borderWidth: 1,
+    height: 40,
+    borderRadius: 30,
+    paddingHorizontal: scale(50),
+    marginLeft: verticalScale(30),
+  },
+  monthContainer: {
+    borderWidth: 1,
+    height: 40,
+    borderRadius: 30,
+    paddingHorizontal: scale(50),
+    left: verticalScale(-30),
+  },
+  weekTxt: {
+    fontSize: global.font_16,
+    textAlign: 'center',
+    marginVertical: verticalScale(5),
+  },
+  monthTxt: {
+    fontSize: global.font_16,
+    textAlign: 'center',
+    marginVertical: verticalScale(5),
+  },
+  footer: {
+    flex: 0.72,
+  },
+  footerHeadingContainer: {
+    flexDirection: 'row',
+    marginTop: verticalScale(28),
+    marginHorizontal: scale(20),
+    justifyContent: 'space-between',
+  },
+  week: {
+    fontSize: global.font_24,
     color: colors.lightBlack,
-    marginTop: verticalScale(32),
-    marginHorizontal: scale(23),
+  },
+  scheduleSession: {
+    fontSize: global.font_14,
+    color: colors.appThemeColor,
+    marginTop: verticalScale(10),
   },
   card: {
     borderWidth: 0.1,
-    marginTop: verticalScale(41),
     marginHorizontal: scale(20),
-    height: 300,
+    height: 180,
     elevation: 3,
     shadowOffset: {height: 4, width: 0},
     shadowRadius: 2,
     shadowOpacity: 0.2,
     shadowColor: colors.gray,
+    borderRadius: 10,
+    borderColor: colors.white,
   },
   imageContainer: {
     flexDirection: 'row',
@@ -31,11 +83,9 @@ export const styles = StyleSheet.create({
     marginTop: verticalScale(20),
   },
   face: {
-    alignSelf: 'center',
-    flex: 1,
-    marginLeft: scale(30),
-    height: 96,
-    width: 96,
+    marginTop: verticalScale(20),
+    height: 48,
+    width: 48,
   },
   edit: {
     marginRight: scale(23),
@@ -45,13 +95,11 @@ export const styles = StyleSheet.create({
     fontSize: global.font_18,
     color: colors.lightBlack,
     marginTop: verticalScale(20),
-    textAlign: 'center',
   },
   profession: {
     fontSize: global.font_12,
     color: colors.lightBlack,
     marginTop: verticalScale(8),
-    textAlign: 'center',
   },
   line: {
     borderWidth: 0.2,
@@ -60,7 +108,6 @@ export const styles = StyleSheet.create({
     borderColor: colors.lightGray,
   },
   calenderContainer: {
-    alignSelf: 'center',
     flexDirection: 'row',
   },
   schedule: {},
@@ -75,6 +122,7 @@ export const styles = StyleSheet.create({
     color: colors.lightBlack,
     marginLeft: verticalScale(10),
   },
+  dots: {},
   disclaimer: {
     fontSize: global.font_15,
     color: colors.lightBlack,

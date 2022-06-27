@@ -17,3 +17,4 @@ export * from './sessions-book';
 export * from './select-session-frequency';
 export * from './CalenderScreen';
 export * from './confirm-selection';
+export * from './ScheduleScreen';

@@ -59,8 +59,8 @@ const SelectedFrequency = (props: any) => {
   };
 
   const onSubmit = () => {
-      props.navigation.navigate("calender")
-  }
+    selectedFrequency == null ? null : props.navigation.navigate('calender');
+  };
   return (
     <View style={styles.container}>
       <View
@@ -93,13 +93,22 @@ const SelectedFrequency = (props: any) => {
           justifyContent: 'flex-end',
           marginBottom: verticalScale(15),
         }}>
-        <TouchableOpacity onPress={() => {onSubmit()}}>
+        <TouchableOpacity
+          onPress={() => {
+            onSubmit();
+          }}>
           <View
             style={[
               styles.btnContainer,
               {
-                borderColor:  colors.appThemeColor,
-                backgroundColor: colors.appThemeColor
+                borderColor:
+                  selectedFrequency == null
+                    ? colors.disableButtonColor
+                    : colors.appThemeColor,
+                backgroundColor:
+                  selectedFrequency == null
+                    ? colors.disableButtonColor
+                    : colors.appThemeColor,
               },
             ]}>
             <Text style={styles.btnText}>Continue</Text>

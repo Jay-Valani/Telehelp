@@ -34,4 +34,5 @@ export const images = {
   HalfCircle: require('./HalfCircle/HalfCircle.png'),
   tick: require('./tick/tick.png'),
   circle: require('./circle/circle.png'),
+  edit: require('./edit/edit.png'),
 };

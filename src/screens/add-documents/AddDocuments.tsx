@@ -17,9 +17,9 @@ const AddDocuments = (props: any) => {
   };
 
   const onSubmit = () => {
-    // isAssignmentBenefitsDone == false
-    //   ? null
-      // : 
+    isAssignmentBenefitsDone == false
+      ? null
+      : 
       props.navigation.navigate('session_book');
   };
   return (
