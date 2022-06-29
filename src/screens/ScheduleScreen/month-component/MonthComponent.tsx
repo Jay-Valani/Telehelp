@@ -66,7 +66,14 @@ const MonthComponent = (props: any) => {
               justifyContent: 'space-between',
               marginHorizontal: scale(20),
             }}>
-            <Text style={styles.repeat}>Repeats Weekly</Text>
+            <View style={{flexDirection: 'row',}}>
+              <Image
+                source={images.iconRepeat}
+                resizeMode="contain"
+                style={{alignSelf: 'center'}}
+              />
+              <Text style={[styles.repeat,{marginLeft: scale(5),}]}>Repeats Weekly</Text>
+            </View>
             <Image
               source={images.iconThreeDots}
               resizeMode="contain"

@@ -1,9 +1,9 @@
 import {StyleSheet} from 'react-native';
-import { colors } from '../../../globals/colors';
-import scale, { verticalScale } from '../../../globals/scale';
+import {colors} from '../../../globals/colors';
+import scale, {verticalScale} from '../../../globals/scale';
 
-export const styles = StyleSheet.create({ 
-switchContainer: {
+export const styles = StyleSheet.create({
+  switchContainer: {
     marginTop: verticalScale(20),
     flexDirection: 'row',
     alignSelf: 'center',
@@ -108,4 +108,8 @@ switchContainer: {
     marginLeft: verticalScale(10),
   },
   dots: {},
-})
+  repeat: {
+    fontSize: global.font_12,
+    color: colors.appThemeColor,
+  },
+});

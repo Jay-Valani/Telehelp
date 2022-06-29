@@ -9,46 +9,18 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
   },
   header: {
-    flex: 0.28,
+    flex: 0.2,
     backgroundColor: colors.appThemeColor,
   },
   headerTxt: {
     fontSize: global.font_32,
     color: colors.white,
     marginTop: verticalScale(70),
-    marginLeft: scale(20),
-  },
-  switchContainer: {
-    marginTop: verticalScale(20),
-    flexDirection: 'row',
-    alignSelf: 'center',
-  },
-  weekContainer: {
-    borderWidth: 1,
-    height: 40,
-    borderRadius: 30,
-    paddingHorizontal: scale(50),
-    marginLeft: verticalScale(30),
-  },
-  monthContainer: {
-    borderWidth: 1,
-    height: 40,
-    borderRadius: 30,
-    paddingHorizontal: scale(50),
-    left: verticalScale(-30),
-  },
-  weekTxt: {
-    fontSize: global.font_16,
-    textAlign: 'center',
-    marginVertical: verticalScale(5),
-  },
-  monthTxt: {
-    fontSize: global.font_16,
-    textAlign: 'center',
-    marginVertical: verticalScale(5),
+    marginLeft: scale(24),
   },
   footer: {
-    flex: 0.72,
+    flex: 0.8,
+    backgroundColor: colors.white,
   },
   footerHeadingContainer: {
     flexDirection: 'row',
@@ -63,12 +35,12 @@ export const styles = StyleSheet.create({
   scheduleSession: {
     fontSize: global.font_14,
     color: colors.appThemeColor,
-    marginTop: verticalScale(10),
+    marginTop: verticalScale(15),
   },
   card: {
     borderWidth: 0.1,
     marginHorizontal: scale(20),
-    height: 180,
+    height: 195,
     elevation: 3,
     shadowOffset: {height: 4, width: 0},
     shadowRadius: 2,
@@ -123,39 +95,13 @@ export const styles = StyleSheet.create({
     marginLeft: verticalScale(10),
   },
   dots: {},
-  disclaimer: {
-    fontSize: global.font_15,
-    color: colors.lightBlack,
-    marginTop: verticalScale(41),
-    textAlign: 'center',
+  repeat: {
+    fontSize: global.font_12,
+    color: colors.appThemeColor,
   },
-  btnContainer: {
-    borderColor: colors.appThemeColor,
-    borderWidth: 1,
-    padding: 15,
-    backgroundColor: colors.appThemeColor,
-    borderRadius: 30,
-    marginHorizontal: scale(20),
-  },
-  btnContainer1: {
-    marginHorizontal: scale(20),
-    marginTop: verticalScale(24),
-  },
-  but: {
-    fontSize: global.font_16,
+  joinNow: {
+    fontSize: global.font_12,
     color: colors.white,
-    textAlign: 'center',
-  },
-  modalHeading: {
-    fontSize: global.font_32,
-    color: colors.black,
-    marginTop: verticalScale(40),
-    marginLeft: scale(32),
-  },
-  conflict: {
-    fontSize: global.font_16,
-    color: colors.lightBlack,
-    fontWeight: "500",
-    marginLeft: scale(16),
-  },
+    marginLeft: scale(10),
+  }
 });

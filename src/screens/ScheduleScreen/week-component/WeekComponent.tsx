@@ -8,7 +8,7 @@ const WeekComponent = (props: any) => {
   const {onWeekSubmit, setSwitchDate, switchDate} = props;
   return (
     <View style={{flex: 1}}>
-      <View>
+      {/* <ScrollView> */}
         <TouchableOpacity>
           <View style={[styles.card, {marginTop: verticalScale(20)}]}>
             <View
@@ -67,9 +67,7 @@ const WeekComponent = (props: any) => {
             </View>
           </View>
         </TouchableOpacity>
-      </View>
 
-      <View>
         <TouchableOpacity>
           <View style={[styles.card, {marginTop: verticalScale(20)}]}>
             <View
@@ -85,7 +83,7 @@ const WeekComponent = (props: any) => {
                 <Text style={styles.name}>James Sacci</Text>
                 <Text style={styles.profession}>Therapist</Text>
               </View>
-              <Image source={images.face} style={styles.face} />
+              <Image source={images.face2} style={styles.face} />
             </View>
             <View style={styles.line} />
             <View
@@ -120,15 +118,30 @@ const WeekComponent = (props: any) => {
                   <Text style={styles.time}>3:00 - 3:45 pm PT </Text>
                 </View>
               </View>
-              <Image
-                source={images.iconThreeDots}
-                resizeMode="contain"
-                style={[styles.watch, {marginTop: verticalScale(20)}]}
-              />
+              <View style={{flexDirection: 'column'}}>
+                <View style={{flexDirection: 'row'}}>
+                  <Image
+                    source={images.iconRepeat}
+                    resizeMode="contain"
+                    style={{alignSelf: 'center'}}
+                  />
+                  <Text style={[styles.repeat, {marginLeft: scale(5)}]}>
+                    Repeats Weekly
+                  </Text>
+                </View>
+                <Image
+                  source={images.iconThreeDots}
+                  resizeMode="contain"
+                  style={[
+                    styles.watch,
+                    {marginTop: verticalScale(20), alignSelf: 'flex-end'},
+                  ]}
+                />
+              </View>
             </View>
           </View>
         </TouchableOpacity>
-      </View>
+      {/* </ScrollView> */}
     </View>
   );
 };

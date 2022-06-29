@@ -35,4 +35,5 @@ export const images = {
   tick: require('./tick/tick.png'),
   circle: require('./circle/circle.png'),
   edit: require('./edit/edit.png'),
+  face2: require('./face2/face2.png'),
 };

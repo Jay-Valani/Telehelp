@@ -20,6 +20,7 @@ import SelectedFrequency from '../screens/select-session-frequency/SelectedFrequ
 import Calender from '../screens/CalenderScreen/CalenderScreen';
 import ConfirmSelection from '../screens/confirm-selection/ConfirmSelection';
 import ScheduleScreen from '../screens/ScheduleScreen/ScheduleScreen';
+import HelpScreen from '../screens/help-screen/HelpScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -124,6 +125,11 @@ export const NavigationStack = () => {
       <Stack.Screen
         name="schedule_Screen"
         component={ScheduleScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="help_screen"
+        component={HelpScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
