@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import scale, {verticalScale} from '../../../globals/scale';
 import {images} from '../../../assets/images/map';
 import {styles} from './MonthComponent.styles';
+import {colors} from '../../../globals/colors';
 
 const MonthComponent = (props: any) => {
   const {onMonthSubmit, setSwitchDate, switchDate} = props;
@@ -66,13 +67,15 @@ const MonthComponent = (props: any) => {
               justifyContent: 'space-between',
               marginHorizontal: scale(20),
             }}>
-            <View style={{flexDirection: 'row',}}>
+            <View style={{flexDirection: 'row'}}>
               <Image
                 source={images.iconRepeat}
                 resizeMode="contain"
                 style={{alignSelf: 'center'}}
               />
-              <Text style={[styles.repeat,{marginLeft: scale(5),}]}>Repeats Weekly</Text>
+              <Text style={[styles.repeat, {marginLeft: scale(5)}]}>
+                Repeats Weekly
+              </Text>
             </View>
             <Image
               source={images.iconThreeDots}
@@ -82,6 +85,19 @@ const MonthComponent = (props: any) => {
           </View>
         </View>
       </TouchableOpacity>
+      <View
+        style={{
+          // justifyContent: 'flex-end',
+          marginBottom: verticalScale(27),
+          // bottom: 0,
+          // backgroundColor: "red",
+        }}>
+        <Text style={styles.disclaimer}>
+          Important disclaimer: {'\n'}
+          <Text style={{color: colors.appThemeColor}}>Missed session</Text>{' '}
+          policy will apply
+        </Text>
+      </View>
     </View>
   );
 };

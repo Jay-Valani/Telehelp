@@ -36,4 +36,6 @@ export const images = {
   circle: require('./circle/circle.png'),
   edit: require('./edit/edit.png'),
   face2: require('./face2/face2.png'),
+  blue_logo: require('./blue_logo/blue_logo.png'),
+  setting: require('./setting/setting.png'),
 };

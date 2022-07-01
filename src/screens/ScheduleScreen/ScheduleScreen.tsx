@@ -7,7 +7,6 @@ import {colors} from '../../globals/colors';
 import WeekComponent from './week-component/WeekComponent';
 import MonthComponent from './month-component/MonthComponent';
 import Modal from 'react-native-modal';
-import BottomTab from '../../component/bottom-tab/BottomTab';
 
 const ScheduleScreen = (props: any) => {
   const [switchDate, setSwitchDate] = useState(true);
@@ -91,23 +90,8 @@ const ScheduleScreen = (props: any) => {
             <Text style={styles.scheduleSession}>Schedule a session</Text>
           </TouchableOpacity>
         </View>
-        {/* week & month */}
         {switchDate == true ? <WeekComponent /> : <MonthComponent />}
-        <View
-          style={{
-            flex: 1,
-            justifyContent: 'flex-end',
-            marginBottom: verticalScale(27),
-            bottom: 0,
-          }}>
-          <Text style={styles.disclaimer}>
-            Important disclaimer: {'\n'}
-            <Text style={{color: colors.appThemeColor}}>
-              Missed session
-            </Text>{' '}
-            policy will apply
-          </Text>
-        </View>
+        
       </View>
       {/* modal */}
       <Modal
@@ -274,8 +258,6 @@ const ScheduleScreen = (props: any) => {
           </View>
         </View>
       </Modal>
-
-      <BottomTab />
     </View>
   );
 }; 

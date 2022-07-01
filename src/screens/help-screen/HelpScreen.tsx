@@ -1,11 +1,20 @@
 import {TouchableOpacity, Text, View, Image} from 'react-native';
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {styles} from './HelpScreen.styles';
 import scale, {verticalScale} from '../../globals/scale';
 import {images} from '../../assets/images/map';
 import {colors} from '../../globals/colors';
+import { useNavigation } from '@react-navigation/native';
 
-const HelpScreen = () => {
+const HelpScreen = (props: any) => {
+  const [videoChat, setVideoChat] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setVideoChat(!videoChat);
+    }, 5000);
+  }, [videoChat]);
+  const navigation = useNavigation()
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -37,6 +46,53 @@ const HelpScreen = () => {
               <Image source={images.face2} style={styles.face} />
             </View>
             <View style={styles.line} />
+            <TouchableOpacity>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  borderWidth: 1,
+                  paddingHorizontal: 100,
+                  paddingVertical: 15,
+                  borderRadius: 30,
+                  borderColor:
+                    videoChat == false
+                      ? colors.disableButtonColor
+                      : colors.appThemeColor,
+                  backgroundColor:
+                    videoChat == false
+                      ? colors.disableButtonColor
+                      : colors.appThemeColor,
+                  alignSelf: 'center',
+                }}>
+                <Image
+                  source={images.iconVideo}
+                  resizeMode="contain"
+                  style={{
+                    tintColor: colors.white,
+                    marginTop: verticalScale(5),
+                  }}
+                />
+                <Text style={styles.joinNow}>Join now</Text>
+              </View>
+            </TouchableOpacity>
+            <View
+              style={{
+                flexDirection: 'row',
+                alignSelf: 'center',
+                marginTop: verticalScale(18),
+              }}>
+              <Image
+                source={images.icon_watch}
+                resizeMode="contain"
+                style={{width: 15, height: 15}}
+              />
+              <Text style={styles.timeZone}>1:00 - 2:00 pm PT</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
+
+        <TouchableOpacity>
+          <View style={[styles.card1, {marginTop: verticalScale(20)}]}>
             <View
               style={{
                 flexDirection: 'row',
@@ -46,48 +102,28 @@ const HelpScreen = () => {
               <View
                 style={{
                   flexDirection: 'column',
-                  justifyContent: 'space-between',
                 }}>
-                <View style={styles.calenderContainer}>
-                  <Image
-                    source={images.schedule_icon}
-                    resizeMode="contain"
-                    style={styles.schedule}
-                  />
-                  <Text style={styles.date}>Every Wednesday </Text>
-                </View>
-                <View
-                  style={[
-                    styles.calenderContainer,
-                    {marginTop: verticalScale(8)},
-                  ]}>
-                  <Image
-                    source={images.icon_watch}
-                    resizeMode="contain"
-                    style={styles.watch}
-                  />
-                  <Text style={styles.time}>3:00 - 3:45 pm PT </Text>
-                </View>
+                <Text style={styles.name}>24/7 Helpline</Text>
+                <Text style={styles.profession}>Online Help</Text>
               </View>
+              <Image source={images.blue_logo} style={styles.face} />
+            </View>
+            <View style={styles.line} />
+            <TouchableOpacity onPress={() => {navigation.navigate("contactUs")}}>
               <View
                 style={{
                   flexDirection: 'row',
                   borderWidth: 1,
-                  paddingHorizontal: 30,
+                  paddingHorizontal: 110,
                   paddingVertical: 15,
                   borderRadius: 30,
                   borderColor: colors.appThemeColor,
                   backgroundColor: colors.appThemeColor,
                   alignSelf: 'center',
                 }}>
-                <Image
-                  source={images.iconVideo}
-                  resizeMode="contain"
-                  style={{tintColor: colors.white, marginTop: verticalScale(5)}}
-                />
-                <Text style={styles.joinNow}>Join now</Text>
+                <Text style={styles.joinNow}>Chat now</Text>
               </View>
-            </View>
+            </TouchableOpacity>
           </View>
         </TouchableOpacity>
       </View>

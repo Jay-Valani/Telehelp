@@ -40,7 +40,19 @@ export const styles = StyleSheet.create({
   card: {
     borderWidth: 0.1,
     marginHorizontal: scale(20),
-    height: 195,
+    height: 220,
+    elevation: 3,
+    shadowOffset: {height: 4, width: 0},
+    shadowRadius: 2,
+    shadowOpacity: 0.2,
+    shadowColor: colors.gray,
+    borderRadius: 10,
+    borderColor: colors.white,
+  },
+  card1: {
+    borderWidth: 0.1,
+    marginHorizontal: scale(20),
+    height: 190,
     elevation: 3,
     shadowOffset: {height: 4, width: 0},
     shadowRadius: 2,
@@ -102,6 +114,11 @@ export const styles = StyleSheet.create({
   joinNow: {
     fontSize: global.font_12,
     color: colors.white,
+    marginLeft: scale(10),
+  },
+  timeZone: {
+    fontSize: global.font_13,
+    color: colors.black,
     marginLeft: scale(10),
   }
 });

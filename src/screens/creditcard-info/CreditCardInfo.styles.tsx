@@ -13,10 +13,14 @@ export const styles = StyleSheet.create({
     borderColor: colors.appThemeColor,
     borderRadius: 20,
   },
+  back_arrow: {
+    marginTop: verticalScale(12),
+    tintColor: colors.white
+  },
   heading: {
     fontSize: global.font_32,
-    color: colors.lightBlack,
-    marginTop: verticalScale(32),
+    color: colors.white,
+    // marginTop: verticalScale(32),
     marginHorizontal: scale(23),
   },
   btnContainer: {
@@ -32,12 +36,20 @@ export const styles = StyleSheet.create({
     marginVertical: verticalScale(15),
   },
   card: {
-    borderRadius: 10,
-    marginHorizontal: scale(23),
+    marginTop: verticalScale(15),
+    marginHorizontal: 20,
+    height: 100,
+    borderRadius: 8,
+    elevation: 4,
+    shadowOffset: {height: 4, width: 0},
+    shadowRadius: 2,
+    shadowOpacity: 0.2,
+    shadowColor: colors.lightGray,
   },
   info: {
     fontSize: global.font_16,
     color: colors.lightBlack,
+    marginTop: verticalScale(10),
   },
   description: {
     fontSize: global.font_14,
@@ -57,19 +69,10 @@ export const styles = StyleSheet.create({
     height: 18,
     width: 18
   },
-  modalTitle: {
-    fontSize: global.font_18,
-    color: colors.lightBlack,
-    marginTop: verticalScale(8),
-    textAlign: "center",
-    fontWeight: "600"
-  },
-  modalSubTitle: {
+  view: {
     fontSize: global.font_16,
-    color: colors.gray,
-    marginTop: verticalScale(32),
-    textAlign: "center",
-    fontWeight: "400",
-    marginHorizontal: scale(20),
+    color: colors.appThemeColor,
+    fontWeight: "500",
+    marginVertical: verticalScale(20),
   }
 });

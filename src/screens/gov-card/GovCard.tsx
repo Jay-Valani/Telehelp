@@ -1,21 +1,19 @@
 import {Image, TouchableOpacity, Text, View} from 'react-native';
 import React, {useState} from 'react';
-import {styles} from './InsuranceCard.styles';
 import scale, {verticalScale} from '../../globals/scale';
 import {images} from '../../assets/images/map';
 import {colors} from '../../globals/colors';
 import ImagePicker from 'react-native-image-crop-picker';
 import Modal from 'react-native-modal';
+import {styles} from "./GovCard.styles"
 
-const InsuranceCard = (props: any) => {
+const GovCard = (props: any) => {
   const [image, setImage] = useState('');
   const [backImage, setBackImage] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
   const {
-    isInsuranceCardDone,
-    insuranceCard,
-    setInsuranceCard,
-    onInsuranceConfirm,
+    govId,
+    setGovId
   } = props;
   const takePhotoFromCamera = () => {
     ImagePicker.openCamera({
@@ -76,10 +74,10 @@ const InsuranceCard = (props: any) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.heading}>Insurance card</Text>
+        <Text style={styles.heading}>Gov issued ID</Text>
         <TouchableOpacity
           onPress={() => {
-            setInsuranceCard(!insuranceCard);
+            setGovId(!govId);
           }}>
           <Image
             source={images.cancle}
@@ -210,8 +208,8 @@ const InsuranceCard = (props: any) => {
         <View style={{borderWidth: 0.5, borderColor: colors.gray}} />
         <TouchableOpacity
           onPress={() => {
-            setInsuranceCard(!insuranceCard);
-            onInsuranceConfirm();
+            setGovId(!govId);
+            // onInsuranceConfirm();
           }}>
           <View
             style={[
@@ -282,4 +280,4 @@ const InsuranceCard = (props: any) => {
   );
 };
 
-export default InsuranceCard;
+export default GovCard;

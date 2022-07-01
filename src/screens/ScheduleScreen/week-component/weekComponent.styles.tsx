@@ -22,6 +22,12 @@ export const styles = StyleSheet.create({
     paddingHorizontal: scale(50),
     left: verticalScale(-30),
   },
+  disclaimer: {
+    fontSize: global.font_15,
+    color: colors.lightBlack,
+    marginTop: verticalScale(41),
+    textAlign: 'center',
+  },
   weekTxt: {
     fontSize: global.font_16,
     textAlign: 'center',

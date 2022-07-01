@@ -10,7 +10,7 @@ import Modal from 'react-native-modal';
 import InsuranceCard from '../InsuranceCard/InsuranceCard';
 
 const PersonalInfo = (props: any) => {
-  const {isPersonalInfoDone, onConfirm,profileModalVisible,setProfileModalVisible} = props;
+  const {isPersonalInfoDone, onConfirm,profileModalVisible,setProfileModalVisible,} = props;
   return (
     <View style={styles.container}>
       <View
@@ -106,7 +106,7 @@ const PersonalInfo = (props: any) => {
                   backgroundColor: colors.appThemeColor,
                 },
               ]}>
-              <Text style={[styles.btnText,{marginVertical: verticalScale(20)}]}>Confirm</Text>
+              <Text style={[styles.btnText,{marginVertical: verticalScale(15)}]}>Confirm</Text>
             </View>
           </TouchableOpacity>
         </View>

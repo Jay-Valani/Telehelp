@@ -21,6 +21,14 @@ import Calender from '../screens/CalenderScreen/CalenderScreen';
 import ConfirmSelection from '../screens/confirm-selection/ConfirmSelection';
 import ScheduleScreen from '../screens/ScheduleScreen/ScheduleScreen';
 import HelpScreen from '../screens/help-screen/HelpScreen';
+import TabNavigation from './TabNavigation';
+import ManageAppointment from '../screens/manage-appointment/ManageAppointment';
+import CancleAppointment from '../screens/cancle-appointment/CancleAppointment';
+import ContactusScreen from '../screens/contactus-screen/ContactusScreen';
+import InsurancePlan from '../screens/insurance-plan/InsurancePlan';
+import GovCard from '../screens/gov-card/GovCard';
+import PaymentHistory from '../screens/PaymentHistory/PaymentHistory';
+import CreditCardInfo from '../screens/creditcard-info/CreditCardInfo';
 
 const Stack = createNativeStackNavigator();
 
@@ -123,13 +131,43 @@ export const NavigationStack = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="schedule_Screen"
-        component={ScheduleScreen}
+        name="tabNavigation"
+        component={TabNavigation}
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="help_screen"
-        component={HelpScreen}
+        name="manageAppointment"
+        component={ManageAppointment}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="cancleAppointment"
+        component={CancleAppointment}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="contactUs"
+        component={ContactusScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="insurancePlan"
+        component={InsurancePlan}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="govCard"
+        component={GovCard}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="paymentHistory"
+        component={PaymentHistory}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="creditCardInfo"
+        component={CreditCardInfo}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

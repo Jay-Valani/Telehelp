@@ -73,7 +73,7 @@ const ConfirmSelection = (props: any) => {
       </Text>
       <View style={{flex: 1, justifyContent: 'flex-end', marginBottom: 27}}>
         <TouchableOpacity
-          onPress={() => {props.navigation.navigate("schedule_Screen")}}>
+          onPress={() => {props.navigation.navigate("tabNavigation")}}>
           <View style={styles.btnContainer}>
             <Text style={styles.but}>Yes, please schedule this</Text>
           </View>

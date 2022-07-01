@@ -257,7 +257,7 @@ const AddInsurance = (props: any) => {
                 style={[
                   styles.btnContainer,
                   {
-                    borderColor: colors.appThemeColor,
+                    borderColor: colors.appThemeColor, 
                     backgroundColor: colors.appThemeColor,
                   },
                 ]}>

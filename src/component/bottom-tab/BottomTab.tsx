@@ -28,7 +28,7 @@ const BottomTab = (props: any) => {
         <TouchableOpacity
           onPress={() => {
             setBottom(1);
-            navigation.navigate('help_screen');
+            // navigation.navigate('help_screen');
           }}>
           <Image
             source={images.community_icon}
