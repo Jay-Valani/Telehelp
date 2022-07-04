@@ -28,6 +28,7 @@ const ProfileScreen = (props: any) => {
       id: 4,
       title: 'Documents',
       subTitle: 'View your uploaded documents',
+      nav: "documentScreen",
     },
   ];
   const _renderCardList = ({item, index}) => {
@@ -64,7 +65,7 @@ const ProfileScreen = (props: any) => {
       <View style={styles.header}>
         <View style={styles.profileContainer}>
           <Text style={styles.profile}>Profile</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {props.navigation.navigate("settingScreen")}}>
             <Image source={images.setting} style={styles.setting} />
           </TouchableOpacity>
         </View>

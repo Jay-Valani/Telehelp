@@ -15,6 +15,17 @@ import {styles} from './PasswordScreen.styles';
 
 export default function PasswordScreen(props: any) {
   const [iconEye, setIconEye] = useState(true);
+  const [passwordChange, setPasswordChange] = useState('');
+  const onEmailChange = val => {
+    console.log('val', val);
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+    if (reg.test(val) === false) {
+      setPasswordChange(val);
+      return false;
+    } else {
+      setPasswordChange(val);
+    }
+  };
   return (
     <View style={styles.container}>
       <SafeAreaView />
@@ -35,7 +46,9 @@ export default function PasswordScreen(props: any) {
         onIconPress={() => setIconEye(!iconEye)}
         secureTextEntry={iconEye == true ? true : false}
         style={{marginTop: verticalScale(40)}}
-
+        value={passwordChange}
+        placeholder="Enter password"
+        onInputChangeHandler={val => onEmailChange(val)}
       />
       <Text style={styles.passwordNote}>
         Minimum 8 char, min 1 uppercase, 1 number and 1 special character
@@ -45,10 +58,10 @@ export default function PasswordScreen(props: any) {
         customButtonStyle={{
           marginHorizontal: verticalScale(20),
         }}
-        // disable={!validation.isValidEmail(loginUserDetail.email) ? true : false}
+        disable={!passwordChange}
         customContainerStyle={styles.button}
         onPress={() => {
-          props.navigation.navigate('setPassword');
+          props.navigation.navigate('tabNavigation');
         }}
       />
     </View>

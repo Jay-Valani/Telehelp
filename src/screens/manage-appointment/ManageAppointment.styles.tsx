@@ -6,7 +6,7 @@ import * as global from '../../globals/global';
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.white,
+    // backgroundColor: colors.white,
   },
   cancle: {
     tintColor: colors.lightBlack,

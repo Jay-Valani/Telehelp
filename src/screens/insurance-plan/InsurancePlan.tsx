@@ -43,7 +43,7 @@ const InsurancePlan = (props: any) => {
               flexDirection: 'row',
               marginVertical: verticalScale(16),
               marginHorizontal: scale(20),
-              justifyContent: 'space-between',
+              justifyContent: 'space-between', 
             }}>
             <View style={{flex: 1}}>
               <Text style={styles.info}>Personal info</Text>

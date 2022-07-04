@@ -43,7 +43,6 @@ const Input = props => {
             style={styles.input}
             autoCapitalize="none"
             keyboardType={keyboardType}
-            // keyboardType='decimal-pad'
             onChangeText={onInputChangeHandler}
             secureTextEntry={secureTextEntry}
             maxLength={maxLength}

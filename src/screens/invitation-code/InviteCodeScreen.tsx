@@ -15,7 +15,7 @@ import Button from '../../component/Button/Button';
 
 const InviteCodeScreen = (props: any) => {
   let otpInput: any = useRef(null);
-  const [buttonVisible, setButtonVisible] = useState();
+  const [buttonVisible, setButtonVisible] = useState('');
 
   const onChangeCode = val => {
     setButtonVisible(val);
@@ -44,6 +44,7 @@ const InviteCodeScreen = (props: any) => {
         tintColor={colors.appThemeColor}
         inputCount={6}
         handleTextChange={val => {
+          console.log("asbabf",buttonVisible);
           onChangeCode(val);
         }}
         ref={e => (otpInput = e)}
@@ -54,7 +55,7 @@ const InviteCodeScreen = (props: any) => {
         customButtonStyle={{
           marginHorizontal: 20,
         }}
-        // disable={buttonVisible !== 6 ? true : false}
+        disable={buttonVisible.length == 6 ? false : true}
         customContainerStyle={styles.button}
         onPress={() => {props.navigation.navigate("emailScreen")}}
       />

@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Image,
@@ -14,6 +14,17 @@ import {verticalScale} from '../../globals/scale';
 import {styles} from './EmailScreen.styles';
 
 export default function EmailScreen(props: any) {
+  const [emailChange, setEmailChange] = useState('');
+  const onEmailChange = val => {
+    console.log('val', val);
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+    if (reg.test(val) === false) {
+      setEmailChange(val);
+      return false;
+    } else {
+      setEmailChange(val);
+    }
+  };
   return (
     <View style={styles.container}>
       <SafeAreaView />
@@ -23,13 +34,20 @@ export default function EmailScreen(props: any) {
         <Image source={images.back_arrow} style={styles.backImage} />
       </TouchableOpacity>
       <Text style={styles.title}>Enter your {'\n'}email address</Text>
-      <Input title="Email address" style={{marginTop: verticalScale(40)}} />
+      <Input
+        title="Email address"
+        placeholder="Email address"
+        value={emailChange}
+        keyboardType="email-address"
+        onInputChangeHandler={val => onEmailChange(val)}
+        style={{marginTop: verticalScale(40)}}
+      />
       <Button
         title="Continue"
         customButtonStyle={{
           marginHorizontal: verticalScale(20),
         }}
-        // disable={!validation.isValidEmail(loginUserDetail.email) ? true : false}
+        disable={!emailChange}
         customContainerStyle={styles.button}
         onPress={() => {
           props.navigation.navigate('passwordScreen');

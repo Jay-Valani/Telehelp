@@ -27,3 +27,5 @@ export * from './insurance-plan';
 export * from './gov-card';
 export * from './PaymentHistory';
 export * from './creditcard-info';
+export * from './documents-screen';
+export * from './setting-screen';

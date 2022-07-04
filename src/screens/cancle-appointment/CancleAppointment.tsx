@@ -5,7 +5,8 @@ import {styles} from './CancleAppointment.styles';
 import scale, {verticalScale} from '../../globals/scale';
 import {colors} from '../../globals/colors';
 
-const CancleAppointment = () => {
+const CancleAppointment = (props: any) => {
+const {setModalCancle,modalCancle} = props
   return (
     <View style={styles.container}>
       <View
@@ -16,7 +17,7 @@ const CancleAppointment = () => {
           marginHorizontal: scale(30),
         }}>
         <Text style={styles.manageAppointment}>Cancle appointment</Text>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => {setModalCancle(!modalCancle)}}>
           <Image
             source={images.cancle}
             // resizeMode="contain"
@@ -91,7 +92,7 @@ const CancleAppointment = () => {
             <Text style={styles.btnText}>Cancle</Text>
           </View>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {setModalCancle(!modalCancle)}}>
           <Text
             style={[
               styles.btnText,

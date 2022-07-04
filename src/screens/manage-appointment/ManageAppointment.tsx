@@ -8,7 +8,7 @@ import {styles} from './ManageAppointment.styles';
 import CancleAppointment from '../cancle-appointment/CancleAppointment';
 
 const ManageAppointment = (props: any) => {
-  const {modalVisible, setModalVisible,onConfirm} = props
+  const {modalVisible, setModalVisible, onConfirm} = props;
   const [checkedCircleShift, setCheckedCircleShift] = useState(0);
   const [modalCancle, setModalCancle] = useState(false);
   return (
@@ -21,7 +21,10 @@ const ManageAppointment = (props: any) => {
           marginHorizontal: scale(30),
         }}>
         <Text style={styles.manageAppointment}>Manage appointment</Text>
-        <TouchableOpacity onPress={() => {setModalVisible(!modalVisible)}}>
+        <TouchableOpacity
+          onPress={() => {
+            setModalVisible(!modalVisible);
+          }}>
           <Image
             source={images.cancle}
             resizeMode="contain"
@@ -124,7 +127,12 @@ const ManageAppointment = (props: any) => {
           justifyContent: 'flex-end',
           marginBottom: verticalScale(30),
         }}>
-        <TouchableOpacity onPress={() => checkedCircleShift == 1 ? setModalCancle(!modalCancle) : null}>
+        <TouchableOpacity
+          onPress={() =>
+            checkedCircleShift == 1
+              ? setModalCancle(!modalCancle) && setModalVisible(!modalVisible)
+              : null
+          }>
           <View style={styles.btnContainer}>
             <Text style={styles.btnText}>Continue</Text>
           </View>
@@ -150,8 +158,11 @@ const ManageAppointment = (props: any) => {
             borderTopLeftRadius: 30,
             borderTopRightRadius: 30,
           }}>
-            <CancleAppointment />
-          </View>
+          <CancleAppointment
+            setModalCancle={setModalCancle}
+            modalCancle={modalCancle}
+          />
+        </View>
       </Modal>
     </View>
   );

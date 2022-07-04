@@ -25,7 +25,12 @@ export default function LoginScreen(props: any) {
         <Image source={images.back_arrow} style={styles.backImage} />
       </TouchableOpacity>
       <Text style={styles.title}>Welcome back</Text>
-      <Input title="Email address" placeholderTextColor={colors.lightBlack} style={{marginTop: verticalScale(40)}} placeholder="Email address" />
+      <Input
+        title="Email address"
+        placeholderTextColor={colors.lightBlack}
+        style={{marginTop: verticalScale(40)}}
+        placeholder="Email address"
+      />
       <Input
         title="Password"
         placeholder="Password"
@@ -37,7 +42,9 @@ export default function LoginScreen(props: any) {
         secureTextEntry={iconEye == true ? true : false}
         style={{marginTop: verticalScale(24)}}
         subTitle="Forgot password"
-        onPressForgetPassword={() => props.navigation.navigate("reset_password")}
+        onPressForgetPassword={() =>
+          props.navigation.navigate('reset_password')
+        }
       />
       <Button
         title="Log In"
@@ -47,7 +54,7 @@ export default function LoginScreen(props: any) {
         // disable={!validation.isValidEmail(loginUserDetail.email) ? true : false}
         customContainerStyle={styles.button}
         onPress={() => {
-          props.navigation.navigate("set_payment_method")
+          props.navigation.navigate('set_payment_method');
         }}
       />
     </View>

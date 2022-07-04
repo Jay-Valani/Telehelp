@@ -19,8 +19,6 @@ import SessionBooked from '../screens/sessions-book/SessionBooked';
 import SelectedFrequency from '../screens/select-session-frequency/SelectedFrequency';
 import Calender from '../screens/CalenderScreen/CalenderScreen';
 import ConfirmSelection from '../screens/confirm-selection/ConfirmSelection';
-import ScheduleScreen from '../screens/ScheduleScreen/ScheduleScreen';
-import HelpScreen from '../screens/help-screen/HelpScreen';
 import TabNavigation from './TabNavigation';
 import ManageAppointment from '../screens/manage-appointment/ManageAppointment';
 import CancleAppointment from '../screens/cancle-appointment/CancleAppointment';
@@ -29,6 +27,8 @@ import InsurancePlan from '../screens/insurance-plan/InsurancePlan';
 import GovCard from '../screens/gov-card/GovCard';
 import PaymentHistory from '../screens/PaymentHistory/PaymentHistory';
 import CreditCardInfo from '../screens/creditcard-info/CreditCardInfo';
+import DocumentScreen from '../screens/documents-screen/DocumentScreen';
+import SettingScreen from '../screens/setting-screen/SettingScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -168,6 +168,16 @@ export const NavigationStack = () => {
       <Stack.Screen
         name="creditCardInfo"
         component={CreditCardInfo}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="documentScreen"
+        component={DocumentScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="settingScreen"
+        component={SettingScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
