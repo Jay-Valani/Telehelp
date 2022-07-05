@@ -8,11 +8,18 @@ import Input from '../../component/text-input/Input';
 import DropDown from '../../component/drop-down/DropDown';
 
 const AddressModal = (props: any) => {
-  const [street, setStreet] = useState('');
-  const [unitNumber, setUnitNumber] = useState('');
-  const [city, setCity] = useState('');
-  const [zip, setZip] = useState('');
-  const {addressModal, setAddressModal} = props;
+  const {
+    addressModal,
+    setAddressModal,
+    street,
+    setStreet,
+    unitNumber,
+    setUnitNumber,
+    city,
+    setCity,
+    zip,
+    setZip,
+  } = props;
   return (
     <View style={styles.container}>
       <View
@@ -53,6 +60,8 @@ const AddressModal = (props: any) => {
             style={{flex: 1}}
             placeholder="Unit number"
             value={unitNumber}
+            maxLength={10}
+            keyboardType="phone-pad"
             onInputChangeHandler={val => {
               setUnitNumber(val);
             }}
@@ -68,9 +77,10 @@ const AddressModal = (props: any) => {
           <Input
             title="City"
             placeholderTextColor={colors.lightBlack}
-            style={{flex: 1}}
+            style={{flex: 1.2}}
             placeholder="Enter"
             value={city}
+            maxLength={3}
             onInputChangeHandler={val => {
               setCity(val);
             }}
@@ -81,6 +91,8 @@ const AddressModal = (props: any) => {
             style={{flex: 1}}
             placeholder="12345"
             value={zip}
+            keyboardType="phone-pad"
+            maxLength={4}
             onInputChangeHandler={val => {
               setZip(val);
             }}
@@ -94,7 +106,10 @@ const AddressModal = (props: any) => {
           marginBottom: verticalScale(30),
         }}>
         <View style={styles.dashLine} />
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity
+          onPress={() => {
+            setAddressModal(!addressModal);
+          }}>
           <View
             style={[
               styles.btnContainer,

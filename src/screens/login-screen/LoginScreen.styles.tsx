@@ -25,10 +25,19 @@ export const styles = StyleSheet.create({
     marginLeft: scale(20),
     color: colors.lightBlack,
   },
-  button: {
-    width: '100%',
-    flex: 1,
-    justifyContent: 'flex-end',
-    marginBottom: 20,
+  btnContainer: {
+    borderWidth: 0.1,
+    height: 56,
+    marginHorizontal: scale(20),
+    borderRadius: 30,
+    borderColor: colors.appThemeColor,
+    backgroundColor: colors.appThemeColor,
+    marginTop: verticalScale(19),
+  },
+  btnText: {
+    fontSize: global.font_16,
+    color: colors.white,
+    textAlign: 'center',
+    marginVertical: verticalScale(15),
   },
 });

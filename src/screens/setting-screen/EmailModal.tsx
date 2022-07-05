@@ -1,4 +1,11 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  ToastAndroid,
+  Image,
+} from 'react-native';
 import React, {useState} from 'react';
 import scale, {verticalScale} from '../../globals/scale';
 import {images} from '../../assets/images/map';
@@ -7,8 +14,20 @@ import * as global from '../../globals/global';
 import Input from '../../component/text-input/Input';
 
 const EmailModal = (props: any) => {
-  const [email, setEmail] = useState('');
-  const {emailModal, setEmailModal} = props;
+  const {emailModal, setEmailModal, email, setEmail} = props;
+
+  const onEmailChange = (val: any) => {
+    console.log('item', val);
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+    if (!reg.test(val) === false) {
+      console.log('Email is Not Correct');
+      setEmail(val);
+      return false;
+    } else {
+      setEmail(val);
+      console.log('Email is Correct');
+    }
+  };
   return (
     <View style={styles.container}>
       <View
@@ -32,9 +51,11 @@ const EmailModal = (props: any) => {
         style={{marginTop: verticalScale(40)}}
         placeholder="Email address"
         value={email}
-        onInputChangeHandler={val => {
-          setEmail(val);
-        }}
+        keyboardType="email-address"
+        // onInputChangeHandler={val => {
+        //   setEmail(val);
+        // }}
+        onInputChangeHandler={val => {setEmail(val),onEmailChange(val)}}
       />
       <View
         style={{
@@ -43,17 +64,20 @@ const EmailModal = (props: any) => {
           marginBottom: verticalScale(30),
         }}>
         <View style={styles.dashLine} />
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity
+          onPress={() => {
+            setEmailModal(!emailModal);
+          }}>
           <View
             style={[
               styles.btnContainer,
               {
                 borderColor:
-                  email == ''
+                  email == 'john@smith.com'
                     ? colors.disableButtonColor
                     : colors.appThemeColor,
                 backgroundColor:
-                  email == ''
+                  email == 'john@smith.com'
                     ? colors.disableButtonColor
                     : colors.appThemeColor,
               },
@@ -99,7 +123,7 @@ const styles = StyleSheet.create({
     fontSize: global.font_16,
     color: colors.white,
     textAlign: 'center',
-    marginVertical: verticalScale(18),
+    marginVertical: verticalScale(15),
   },
 });
 

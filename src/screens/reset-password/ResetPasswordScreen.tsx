@@ -12,9 +12,11 @@ import Button from '../../component/Button/Button';
 import Input from '../../component/text-input/Input';
 import {verticalScale} from '../../globals/scale';
 import { styles } from './ResetPasswordScreen.styles';
+import { useRoute } from "@react-navigation/native"
 
 export default function ResetPasswordScreen(props: any) {
   const [iconEye, setIconEye] = useState(true);
+  const route = useRoute();
   return (
     <View style={styles.container}>
       <SafeAreaView />
@@ -28,14 +30,14 @@ export default function ResetPasswordScreen(props: any) {
       </Text>
       <Input
         title="Email address"
-        style={{marginTop: verticalScale(40)}}
+        style={{marginTop: verticalScale(40),}}
+        placeholder={route.params.email}
       />
       <Button
         title="Reset password"
         customButtonStyle={{
           marginHorizontal: verticalScale(20),
         }}
-        // disable={!validation.isValidEmail(loginUserDetail.email) ? true : false}
         customContainerStyle={styles.button}
         onPress={() => {
           props.navigation.navigate('checkEmail');

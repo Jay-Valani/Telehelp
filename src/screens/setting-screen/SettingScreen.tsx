@@ -12,6 +12,11 @@ import PasswordModal from './PassowrdModal';
 import DeleteModal from './DeleteModal';
 
 const SettingScreen = (props: any) => {
+  const [email, setEmail] = useState('john@smith.com');
+  const [street, setStreet] = useState('238 Avenue');
+  const [unitNumber, setUnitNumber] = useState('29');
+  const [city, setCity] = useState('New York');
+  const [zip, setZip] = useState('1234');
   const [passwordModal, setPasswordModal] = useState(false);
   const [emailModal, setEmailModal] = useState(false);
   const [addressModal, setAddressModal] = useState(false);
@@ -101,7 +106,7 @@ const SettingScreen = (props: any) => {
                 <Text style={styles.edit}>Edit</Text>
               </TouchableOpacity>
             </View>
-            <Text style={styles.settingsSubTitle}>john@smith.com</Text>
+            <Text style={styles.settingsSubTitle}>{email}</Text>
           </View>
           <View
             style={[styles.dashLine, {marginVertical: verticalScale(20)}]}
@@ -138,7 +143,7 @@ const SettingScreen = (props: any) => {
               </TouchableOpacity>
             </View>
             <Text style={styles.settingsSubTitle}>
-              238 Avenue, 29 New York, USA
+              {street},{unitNumber} {city},{zip}
             </Text>
           </View>
           <View
@@ -257,7 +262,7 @@ const SettingScreen = (props: any) => {
             borderTopLeftRadius: 30,
             borderTopRightRadius: 30,
           }}>
-          <EmailModal setEmailModal={setEmailModal} emailModal={emailModal} />
+          <EmailModal setEmailModal={setEmailModal} emailModal={emailModal} email={email} setEmail={setEmail} />
         </View>
       </Modal>
       {/* address */}
@@ -284,6 +289,14 @@ const SettingScreen = (props: any) => {
           <AddressModal
             setAddressModal={setAddressModal}
             addressModal={addressModal}
+            street={street}
+            setStreet={setStreet}
+            unitNumber={unitNumber}
+            setUnitNumber={setUnitNumber}
+            city={city}
+            setCity={setCity}
+            zip={zip}
+            setZip={setZip}
           />
         </View>
       </Modal>

@@ -141,7 +141,7 @@ const AddInsurance = (props: any) => {
         </View>
       </TouchableOpacity>
 
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => {props.navigation.navigate("govCard")}}>
         <View
           style={[
             styles.card,
